@@ -1,27 +1,9 @@
 from random import randint
 
 
-user_board = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-]
+user_board = [[' '] * 8 for x in range(8)]
 
-computer_board = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-]
+computer_board = [[' '] * 8 for x in range(8)]
 
 letters_to_numbers = {
     'A': 0,
@@ -34,12 +16,26 @@ letters_to_numbers = {
     'H': 7,
 }
 
-for i in range(8):
-    print ("Please pleace your ships!", i + 1)
-    column = input('column(A, H)')
-    row = input('row(1, 8)')
-    column_number = letters_to_numbers
-    row_number = int(row) -1
-    user_board[row_number][column_number] = 'x'
+def print_board(board):
+    print('A B C D E F G H')
+    print('----------------')
+    row_number = 1
+    for row in board:
+        print("%d|%s|" % (row_number, "|".join(row)))
+        row_number += 1
 
-print(board)
+def place_ships():
+    pass
+
+def play_game():
+    pass
+
+def valid_coordinates():
+    pass
+
+def make_choice():
+    pass
+
+def new_game():
+    pass
+
