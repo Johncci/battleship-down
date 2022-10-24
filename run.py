@@ -24,8 +24,12 @@ def print_board(board):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-def place_ships():
-    pass
+def place_ships(board):
+    for ship in range(8):
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
+        while board[ship_row][ship_column] == 'x':
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
+        board[ship_row][ship_column] = 'x'
 
 def play_game():
     pass
@@ -38,4 +42,5 @@ def make_choice():
 
 def new_game():
     pass
+
 
