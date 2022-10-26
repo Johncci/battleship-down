@@ -29,16 +29,29 @@ def place_ships(board):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == 'x':
             ship_row, ship_column = randint(0, 7), randint(0, 7)
-        board[ship_row][ship_column] = 'x'
+        board[ship_row][ship_column] = 'X'
 
 def play_game():
     pass
 
 def valid_coordinates():
-    pass
-
-def make_choice():
-    pass
+    row = input("Enter the row of the ship: ").upper()
+    while row not in "12345678":
+        print("Please select a valid number between 1 and 8 inclusive")
+        row = input("Enter the row of the ship: ").upper()
+    column = input("Enter the column of the ship: ").upper()
+    while column not in "ABCDEFGH":
+        print("Please choose a valud option between A and H inclusive")
+        column = input("Enter the column of the ship: ").upper()
+    return int(row) - 1, letters_to_numbers[column]
+  
+def ships_sunk(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
 def new_game():
     pass
